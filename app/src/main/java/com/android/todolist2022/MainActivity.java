@@ -3,6 +3,8 @@ package com.android.todolist2022;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
 
 import com.android.todolist2022.ui.NotesListFragment;
 
@@ -13,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         openNoteListScreen();
-
     }
 
     private void openNoteListScreen() {
@@ -24,6 +25,4 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.fragment_container, notesListFragment)
                 .commit();
     }
-
-
 }
