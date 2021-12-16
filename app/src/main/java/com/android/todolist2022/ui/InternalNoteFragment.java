@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.todolist2022.R;
+import com.google.android.material.snackbar.Snackbar;
 
 public class InternalNoteFragment extends Fragment {
 
@@ -46,9 +47,18 @@ public class InternalNoteFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_calendar) {
-            Toast.makeText(requireContext(),"show calendar",Toast.LENGTH_SHORT).show();
+            requireActivity().findViewById(R.id.action_calendar).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showSnackbar(view);
+                }
+            });
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showSnackbar(View view) {
+        Snackbar.make(view, R.string.snackbar_message, Snackbar.LENGTH_SHORT).show();
     }
 }

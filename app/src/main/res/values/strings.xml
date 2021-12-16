@@ -7,4 +7,5 @@
     <string name="feature_one">main</string>
     <string name="feature_two">settings</string>
     <string name="feature_three">calendar</string>
+    <string name="snackbar_message">calendar message</string>
 </resources>

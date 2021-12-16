@@ -2,6 +2,7 @@ package com.android.todolist2022.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.todolist2022.R;
 import com.android.todolist2022.domain.Note;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +29,7 @@ public class NotesListFragment extends Fragment implements NoteListAdapter.NoteC
     private RecyclerView recyclerView;
     private NoteListAdapter adapter;
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_note_list, container, false);
     }
@@ -43,7 +44,6 @@ public class NotesListFragment extends Fragment implements NoteListAdapter.NoteC
         List<Note> items = generateNotes();
         adapter = new NoteListAdapter(items,this);
         recyclerView.setAdapter(adapter);
-
     }
 
     private List<Note> generateNotes() {
@@ -51,9 +51,23 @@ public class NotesListFragment extends Fragment implements NoteListAdapter.NoteC
         Note note1 = new Note("Note1", "pass","12.02.2020");
         Note note2 = new Note("Note2", "adres","01.12.2010");
         Note note3 = new Note("Note3", "e-mail","22.02.2022");
+        Note note4 = new Note("Note3", "e-mail","22.02.2022");
+        Note note5 = new Note("Note3", "e-mail","22.02.2022");
+        Note note6 = new Note("Note3", "e-mail","22.02.2022");
+        Note note7 = new Note("Note3", "e-mail","22.02.2022");
+        Note note8 = new Note("Note3", "e-mail","22.02.2022");
+        Note note9 = new Note("Note3", "e-mail","22.02.2022");
+        Note note10 = new Note("Note3", "e-mail","22.02.2022");
         list.add(note1);
         list.add(note2);
         list.add(note3);
+        list.add(note4);
+        list.add(note5);
+        list.add(note6);
+        list.add(note7);
+        list.add(note8);
+        list.add(note9);
+        list.add(note10);
         return list;
     }
 
