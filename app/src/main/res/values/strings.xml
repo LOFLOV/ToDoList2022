@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">ToDoList2022</string>
+    <string name="app_name"></string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="note_title">note title</string>
     <string name="description">description</string>
+    <string name="show_calendar">calendar</string>
+    <string name="feature_one">main</string>
+    <string name="feature_two">settings</string>
+    <string name="feature_three">calendar</string>
+    <string name="snackbar_message">calendar message</string>
 </resources>
