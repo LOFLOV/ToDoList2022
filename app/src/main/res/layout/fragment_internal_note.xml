@@ -9,7 +9,7 @@
     android:focusable="true"
     android:background="@color/note"
     android:padding="@dimen/default_margin"
-    tools:context=".ui.InternalNoteFragment">
+    tools:context=".ui.list.InternalNoteFragment">
 
     <EditText
         android:id="@+id/title_fragment_2"

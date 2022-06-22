@@ -8,4 +8,7 @@
     <string name="feature_two">settings</string>
     <string name="feature_three">calendar</string>
     <string name="snackbar_message">calendar message</string>
+    <string name="btn_save">Save</string>
+    <string name="hint_title">title</string>
+    <string name="hint_message">message</string>
 </resources>

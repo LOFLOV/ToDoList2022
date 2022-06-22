@@ -1,4 +1,4 @@
-package com.android.todolist2022.ui;
+package com.android.todolist2022.ui.list;
 
 import android.os.Bundle;
 

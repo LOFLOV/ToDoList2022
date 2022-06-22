@@ -1,4 +1,4 @@
-package com.android.todolist2022.ui;
+package com.android.todolist2022.ui.list;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,9 +60,9 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
         }
 
         public void bind(Note note) {
-            title.setText(note.title);
-            description.setText(note.description);
-            date.setText(note.date);
+            title.setText(note.getTitle());
+            description.setText(note.getMessage());
+            date.setText(note.getCreatedAt().toString());
         }
     }
 

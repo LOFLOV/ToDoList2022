@@ -3,26 +3,41 @@ package com.android.todolist2022.domain;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Note implements Parcelable {
-    public String title;
-    public String description;
-    public String date;
-    public boolean clicked;
+import java.util.Date;
 
-    public Note() {
+public class Note implements Parcelable {
+
+    private String id;
+
+    private String title;
+
+    private String message;
+    
+    private Date createdAt;
+
+    public String getTitle() {
+        return title;
     }
 
-    public Note(String title, String description, String date) {
+    public String getMessage() {
+        return message;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Note(String id, String title, String message, Date createdAt) {
+        this.id = id;
         this.title = title;
-        this.description = description;
-        this.date = date;
+        this.message = message;
+        this.createdAt = createdAt;
     }
 
 
     protected Note(Parcel in) {
         title = in.readString();
-        description = in.readString();
-        date = in.readString();
+        message = in.readString();
     }
 
     public static final Creator<Note> CREATOR = new Creator<Note>() {
@@ -45,7 +60,6 @@ public class Note implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(title);
-        parcel.writeString(description);
-        parcel.writeString(date);
+        parcel.writeString(message);
     }
 }

@@ -1,26 +1,25 @@
-package com.android.todolist2022.ui;
+package com.android.todolist2022.ui.list;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.todolist2022.R;
+import com.android.todolist2022.ui.add.AddNoteBottomSheetDialogFragment;
 import com.android.todolist2022.domain.Note;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class NotesListFragment extends Fragment implements NoteListAdapter.NoteClickListener {
 
@@ -44,20 +43,29 @@ public class NotesListFragment extends Fragment implements NoteListAdapter.NoteC
         List<Note> items = generateNotes();
         adapter = new NoteListAdapter(items,this);
         recyclerView.setAdapter(adapter);
+
+        view.findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AddNoteBottomSheetDialogFragment.newInstance()
+                        .show(getParentFragmentManager(), AddNoteBottomSheetDialogFragment.TAG);
+            }
+        });
+        
     }
 
     private List<Note> generateNotes() {
         List<Note> list = new ArrayList<>();
-        Note note1 = new Note("Note1", "pass","12.02.2020");
-        Note note2 = new Note("Note2", "adres","01.12.2010");
-        Note note3 = new Note("Note3", "e-mail","22.02.2022");
-        Note note4 = new Note("Note3", "e-mail","22.02.2022");
-        Note note5 = new Note("Note3", "e-mail","22.02.2022");
-        Note note6 = new Note("Note3", "e-mail","22.02.2022");
-        Note note7 = new Note("Note3", "e-mail","22.02.2022");
-        Note note8 = new Note("Note3", "e-mail","22.02.2022");
-        Note note9 = new Note("Note3", "e-mail","22.02.2022");
-        Note note10 = new Note("Note3", "e-mail","22.02.2022");
+        Note note1 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
+        Note note2 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
+        Note note3 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
+        Note note4 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
+        Note note5 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
+        Note note6 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
+        Note note7 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
+        Note note8 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
+        Note note9 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
+        Note note10 = new Note(UUID.randomUUID().toString(),"title 1", "message 1", new Date());
         list.add(note1);
         list.add(note2);
         list.add(note3);
